@@ -1,31 +1,33 @@
-<template name="53c89d56">
-  <view class="_view data-v-6c1efea0 content">
-    <view class="_view data-v-6c1efea0 logo">
-      <image src="../../static/logo.jpg" mode="widthFix" class="_image data-v-6c1efea0"></image>
+<template name="e5e11f94">
+  <view class="_view data-v-fe3780de content">
+    <view class="_view data-v-fe3780de logo">
+      <image src="../../static/logo.jpg" mode="widthFix" class="_image data-v-fe3780de"></image>
     </view>
-    <view class="_view data-v-6c1efea0 form">
-      <view class="_view data-v-6c1efea0 input-group" wx:key="index" key="{{index}}" wx:for="{{flags}}" wx:for-index="index" wx:for-item="flag">
-        <i-icon type="flag" color="#ff4c31" size="30" class="_i-icon data-v-6c1efea0"></i-icon>
-        <view class="_view data-v-6c1efea0 input-item">
-          <input type="text" value="{{flag}}" data-index="{{index}}" bindinput="handleProxy" data-eventid="{{'4Ou-0-'+index}}" data-comkey="{{$k}}" class="_input data-v-6c1efea0" />
+    <scroll-view scroll-y class="_scroll-view data-v-fe3780de" style=" {{('height:' + (scroll_height + 'px') + ';')}}">
+      <view class="_view data-v-fe3780de form">
+        <view class="_view data-v-fe3780de input-group" wx:key="index" key="{{index}}" wx:for="{{flags}}" wx:for-index="index" wx:for-item="flag">
+          <i-icon type="flag" color="#ff4c31" size="30" class="_i-icon data-v-fe3780de"></i-icon>
+          <view class="_view data-v-fe3780de input-item">
+            <input type="text" value="{{flag}}" data-index="{{index}}" bindinput="handleProxy" data-eventid="{{'8Qx-0-'+index}}" data-comkey="{{$k}}" class="_input data-v-fe3780de" />
+          </view>
+          <i-icon type="trash" color="#ccc" size="20" bindtap="handleProxy" data-eventid="{{'9JE-1-'+index}}" data-comkey="{{$k}}" class="_i-icon data-v-fe3780de"></i-icon>
         </view>
-        <i-icon type="trash" color="#ccc" size="20" bindtap="handleProxy" data-eventid="{{'0Th-1-'+index}}" data-comkey="{{$k}}" class="_i-icon data-v-6c1efea0"></i-icon>
-      </view>
-      <view class="_view data-v-6c1efea0 input-group">
-        <i-icon type="brush" color="#ff4c31" size="30" class="_i-icon data-v-6c1efea0"></i-icon>
-        <view class="_view data-v-6c1efea0 input-item">
-          <input type="text" placeholder="签名" value="{{name}}" bindinput="handleProxy" data-eventid="{{'ctd-2'}}" data-comkey="{{$k}}" class="_input data-v-6c1efea0" />
+        <view class="_view data-v-fe3780de input-group">
+          <i-icon type="brush" color="#ff4c31" size="30" class="_i-icon data-v-fe3780de"></i-icon>
+          <view class="_view data-v-fe3780de input-item">
+            <input type="text" placeholder="签名" value="{{name}}" bindinput="handleProxy" data-eventid="{{'Fdv-2'}}" data-comkey="{{$k}}" class="_input data-v-fe3780de" />
+          </view>
+          <i-icon type="trash" color="#ccc" size="20" bindtap="handleProxy" data-eventid="{{'xST-3'}}" data-comkey="{{$k}}" class="_i-icon data-v-fe3780de"></i-icon>
         </view>
-        <i-icon type="trash" color="#ccc" size="20" bindtap="handleProxy" data-eventid="{{'khs-3'}}" data-comkey="{{$k}}" class="_i-icon data-v-6c1efea0"></i-icon>
       </view>
-    </view>
-    <canvas class="_canvas data-v-6c1efea0 canvas-element" canvas-id="canvas"></canvas>
-    <view class="_view data-v-6c1efea0 action-group">
-      <view class="_view data-v-6c1efea0 flag">
-        <input type="text" placeholder="立flag" bindinput="handleProxy" data-eventid="{{'fp1-4'}}" data-comkey="{{$k}}" class="_input data-v-6c1efea0" />
-        <i-icon type="enter" size="30" bindtap="handleProxy" data-eventid="{{'d8b-5'}}" data-comkey="{{$k}}" class="_i-icon data-v-6c1efea0"></i-icon>
+    </scroll-view>
+    <canvas class="_canvas data-v-fe3780de canvas-element" canvas-id="canvas"></canvas>
+    <view class="_view data-v-fe3780de action-group">
+      <view class="_view data-v-fe3780de flag">
+        <input type="text" placeholder="立flag" bindinput="handleProxy" data-eventid="{{'Rgj-4'}}" data-comkey="{{$k}}" class="_input data-v-fe3780de" />
+        <i-icon type="enter" size="30" bindtap="handleProxy" data-eventid="{{'oyV-5'}}" data-comkey="{{$k}}" class="_i-icon data-v-fe3780de"></i-icon>
       </view>
-      <view class="_view data-v-6c1efea0 share" bindtap="handleProxy" data-eventid="{{'RKk-6'}}" data-comkey="{{$k}}"> 保存分享 </view>
+      <view class="_view data-v-fe3780de share" bindtap="handleProxy" data-eventid="{{'OGl-6'}}" data-comkey="{{$k}}"> 保存分享 </view>
     </view>
   </view>
 </template>

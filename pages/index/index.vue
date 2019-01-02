@@ -3,22 +3,24 @@
 		<view class="logo">
 			<image src="../../static/logo.jpg" mode="widthFix"></image>
 		</view>
-		<view class="form">
-			<view class="input-group" v-for="(flag, index) in flags" :key="index">
-				<i-icon type="flag" color="#ff4c31" size="30" />
-				<view class="input-item">
-					<input type="text" :value="flag" :data-index="index" @input="flaghange" />
+		<scroll-view scroll-y :style="{height: scroll_height+'px'}">
+			<view class="form">
+				<view class="input-group" v-for="(flag, index) in flags" :key="index">
+					<i-icon type="flag" color="#ff4c31" size="30" />
+					<view class="input-item">
+						<input type="text" :value="flag" :data-index="index" @input="flaghange" />
+					</view>
+					<i-icon type="trash" color="#ccc" size="20" @tap="flagRemove(index)" />
 				</view>
-				<i-icon type="trash" color="#ccc" size="20" @tap="flagRemove(index)" />
-			</view>
-			<view class="input-group">
-				<i-icon type="brush" color="#ff4c31" size="30" />
-				<view class="input-item">
-					<input type="text" placeholder="签名" :value="name" @input="nameSign" />
+				<view class="input-group">
+					<i-icon type="brush" color="#ff4c31" size="30" />
+					<view class="input-item">
+						<input type="text" placeholder="签名" :value="name" @input="nameSign" />
+					</view>
+					<i-icon type="trash" color="#ccc" size="20" @tap="nameClear" />
 				</view>
-				<i-icon type="trash" color="#ccc" size="20" @tap="nameClear" />
 			</view>
-		</view>
+		</scroll-view>
 		<canvas class="canvas-element" canvas-id="canvas"></canvas>
 		<view class="action-group">
 			<view class="flag">
@@ -36,6 +38,7 @@
 	export default {
 		data() {
 			return {
+                scroll_height: '',
 				name: '',
 				flag_add: '',
 				flags: [
@@ -43,6 +46,22 @@
 				]
 			}
 		},
+        onReady() {
+            uni.getSystemInfo({
+            	success: (res) => {
+            		let windowHeight = res.windowHeight;
+                    
+                    let query = uni.createSelectorQuery();
+                    query.select(".logo").boundingClientRect();
+                    query.select(".action-group").boundingClientRect();
+                    query.exec(data => {
+                        let top = data[0];
+                        let btn = data[1];
+                        this.scroll_heightls = windowHeight - top.height - btn.height;
+                    });
+            	}
+            })
+        },
 		methods: {
 			nameSign(e) {
 				this.name = e.detail.value;
@@ -59,7 +78,7 @@
 				this.flag_add = e.detail.value;
 			},
 			flagAdd() {
-				this.flags.splice(this.flag_add.length, 0, this.flag_add);
+				this.flags.splice(this.flags.length, 0, this.flag_add);
 			},
 			flagRemove(e) {
 				this.flags.splice(e, 1);
@@ -177,7 +196,14 @@
 					})
 				})
 			}
-		}
+		},
+        onShareAppMessage() {
+        	return {
+        		title: '属于你的2019',
+                imageUrl: '../../static/logo.jpg',
+        		path: '/pages/index/index'
+        	}
+        }
 	}
 </script>
 
