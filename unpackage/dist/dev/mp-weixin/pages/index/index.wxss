@@ -1,0 +1,72 @@
+
+.canvas-element {
+  position: fixed;
+  right: 999px;
+  width: 375px;
+  height: 600px;
+  margin-bottom: 100px;
+}
+.logo {
+  text-align: center;
+  padding: 15px 0;
+}
+.logo image {
+  width: 550rpx;
+}
+.form {
+  padding: 0 15px;
+}
+.input-group {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.input-group i-icon:first-child {
+  margin-right: 5px;
+}
+.input-group i-icon:last-child {
+  margin-left: 10px;
+}
+.input-item {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  font-size: 36rpx;
+  color: #8f8f94;
+  border-bottom: 2px dashed #ff4c31;
+}
+.action-group {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.flag {
+  margin: 20px 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  border: 1px solid #000;
+}
+.flag i-icon {
+  padding: 5px;
+}
+.flag ._input {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  padding: 5px 10px;
+}
+.share {
+  color: #fff;
+  line-height: 45px;
+  text-align: center;
+  background-color: #ff4c2e;
+}
